@@ -21,12 +21,11 @@ allprojects {
 }
 
 subprojects {
+    apply(plugin = "kotlin")
+    apply(plugin = "kotlin-spring") //allopen
     apply(plugin = "org.jetbrains.kotlin.plugin.spring")
     apply(plugin = "io.spring.dependency-management")
     apply(plugin = "org.springframework.boot")
-
-    apply(plugin = "kotlin")
-    apply(plugin = "kotlin-spring") //allopen
 
     dependencies {
         implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
