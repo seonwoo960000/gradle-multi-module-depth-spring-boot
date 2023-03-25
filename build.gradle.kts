@@ -1,15 +1,15 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id("org.springframework.boot") version "2.6.3"
-    id("io.spring.dependency-management") version "1.0.11.RELEASE"
-    kotlin("jvm") version "1.6.10"
-    kotlin("plugin.spring") version "1.6.10" apply false
-    kotlin("plugin.jpa") version "1.6.10" apply false
-    kotlin("kapt") version "1.3.61"
+    id("org.springframework.boot") version "3.0.5"
+    id("io.spring.dependency-management") version "1.1.0"
+    kotlin("jvm") version "1.7.22"
+    kotlin("plugin.spring") version "1.7.22"
+    kotlin("plugin.allopen") version "1.6.21"
+    kotlin("plugin.jpa") version "1.6.21"
 }
 
-java.sourceCompatibility = JavaVersion.VERSION_11
+java.sourceCompatibility = JavaVersion.VERSION_17
 
 allprojects {
     group = "com.example"
@@ -21,8 +21,6 @@ allprojects {
 }
 
 subprojects {
-    apply(plugin = "java")
-
     apply(plugin = "org.jetbrains.kotlin.plugin.spring")
     apply(plugin = "io.spring.dependency-management")
     apply(plugin = "org.springframework.boot")
@@ -31,20 +29,13 @@ subprojects {
     apply(plugin = "kotlin-spring") //allopen
 
     dependencies {
-        //kotlin
-        implementation("org.jetbrains.kotlin:kotlin-reflect")
-        implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-
-        //spring boot
-        implementation("org.springframework.boot:spring-boot-starter-actuator")
-        implementation("org.springframework.boot:spring-boot-starter-web")
-        implementation("io.micrometer:micrometer-registry-prometheus")
         implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
-        implementation("org.springframework.boot:spring-boot-starter-validation") // kafka 에서 필요
+        implementation("org.jetbrains.kotlin:kotlin-reflect")
+        testImplementation("org.springframework.boot:spring-boot-starter-test")
 
-        //mockk
-        testImplementation("io.mockk:mockk:1.12.0")
-        testImplementation("com.ninja-squad:springmockk:2.0.3")
+//        implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+        implementation("org.springframework.boot:spring-boot-starter-web")
+        implementation("org.springframework.boot:spring-boot-starter-actuator")
     }
 
     dependencyManagement {
@@ -56,7 +47,7 @@ subprojects {
     tasks.withType<KotlinCompile> {
         kotlinOptions {
             freeCompilerArgs = listOf("-Xjsr305=strict")
-            jvmTarget = "11"
+            jvmTarget = "17"
         }
     }
 

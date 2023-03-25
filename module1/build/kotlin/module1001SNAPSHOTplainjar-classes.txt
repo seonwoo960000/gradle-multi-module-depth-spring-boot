@@ -1,0 +1,1 @@
+/Users/user/Desktop/Personal/multi-module/module1/build/classes/kotlin/main/com/example/module1/HelloController.class:/Users/user/Desktop/Personal/multi-module/module1/build/classes/kotlin/main/com/example/module1/Module1Application.class:/Users/user/Desktop/Personal/multi-module/module1/build/classes/kotlin/main/com/example/module1/Module1ApplicationKt.class
