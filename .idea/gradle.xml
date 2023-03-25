@@ -11,6 +11,8 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/module1" />
             <option value="$PROJECT_DIR$/module2" />
+            <option value="$PROJECT_DIR$/stream/processor" />
+            <option value="$PROJECT_DIR$/stream/sink" />
             <option value="$PROJECT_DIR$/stream/source" />
           </set>
         </option>
