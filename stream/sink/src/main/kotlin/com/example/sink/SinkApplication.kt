@@ -1,4 +1,4 @@
-package com.example.source
+package com.example.sink
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
@@ -7,5 +7,5 @@ import org.springframework.boot.runApplication
 class SinkApplication
 
 fun main(args: Array<String>) {
-    runApplication<SourceApplication>(*args)
+    runApplication<SinkApplication>(*args)
 }

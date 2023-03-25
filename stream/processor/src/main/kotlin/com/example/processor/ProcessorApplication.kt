@@ -1,11 +1,11 @@
-package com.example.source
+package com.example.processor
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class SourceApplication
+class ProcessorApplication
 
 fun main(args: Array<String>) {
-    runApplication<SourceApplication>(*args)
+    runApplication<ProcessorApplication>(*args)
 }
